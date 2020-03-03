@@ -1,0 +1,91 @@
+list:
+ - id: 1
+   gender: male
+   age: 30
+   citizen: false
+   score: 300
+   funds: 5460
+ - id: 2
+   gender: female
+   age: 30
+   citizen: false
+   score: 300
+   funds: 5460
+ - id: 3
+   gender: female
+   age: 28
+   citizen: false
+   score: 300
+   funds: 5460
+ - id: 4
+   gender: female
+   age: 28
+   citizen: true
+   score: 300
+   funds: 5460
+ - id: 5
+   gender: female
+   age: 28
+   citizen: true
+   score: 330
+   funds: 5460
+ - id: 6
+   gender: female
+   age: 28
+   citizen: true
+   score: 330
+   funds: 20000
+ - id: 7
+   gender: male
+   age: 33
+   citizen: false
+   score: 300
+   funds: 15460
+ - id: 8
+   gender: female
+   age: 33
+   citizen: false
+   score: 300
+   funds: 15460
+ - id: 9
+   gender: female
+   age: 35
+   citizen: false
+   score: 300
+   funds: 15460
+ - id: 10
+   gender: female
+   age: 35
+   citizen: true
+   score: 300
+   funds: 15460
+ - id: 11
+   gender: female
+   age: 35
+   citizen: false
+   score: 330
+   funds: 15460
+ - id: 12
+   gender: male
+   age: 35
+   citizen: true
+   score: 330
+   funds: 30000
+ - id: 13
+   gender: male
+   age: 28
+   citizen: true
+   score: 300
+   funds: 7460
+ - id: 14
+   gender: male
+   age: 28
+   citizen: true
+   score: 330
+   funds: 7460
+ - id: 15
+   gender: male
+   age: 28
+   citizen: true
+   score: 7330
+   funds: 20000
