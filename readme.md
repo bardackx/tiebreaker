@@ -1,5 +1,5 @@
 # Tiebreaker
-A super small java library for sorting and picking by multiple criteria focused on code readability
+A super small java library for sorting and picking by multiple criteria focused on code readability.
 
 ## Examples
 
@@ -34,17 +34,25 @@ List<Candidate> sortedCandidates = new Tiebreaker<Candidate>()
         .sort(list);
 ```
 
-## Planned
-
-### Pick best N elements
-Similar to sort but with a filter
+### Support for temporal types
+In addition to the java primitives the library supports Calendar, Date, LocalDate, Instant, and other types from the java.time package
 ```java
-tiebreaker.pick(list, 5)
+Shipments prioritizedShipment = new Tiebreaker<Shipment>()
+		.earliest(e -> e.getArrivalDate());
+		.latest(e -> e.getOrderDate())
+		.pick(shipments);
 ```
 
-### Support for temporal types
-Support for Calendar, Date, LocalDate, Instant, etcetera
+## Planned
+
+### Keep best N elements
+Similar to sort but with a filter
 ```java
-tiebreaker.earliest(e -> e.getArrivalDate());
-tiebreaker.latest(e -> e.getOrderDate());
+tiebreaker.keep(list, 5)
+```
+
+### Drop best N elements
+Like pick(Iterable,int) but it drops the best N elements instead of keeping them
+```java
+tiebreaker.drop(list, 5)
 ```

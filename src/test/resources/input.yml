@@ -87,5 +87,23 @@ list:
    gender: male
    age: 28
    citizen: true
+   score: 7333
+   funds: 20001
+ - id: 16
+   gender: male
+   age: 28
+   citizen: true
+   score: 7332
+   funds: 20002
+ - id: 17
+   gender: male
+   age: 28
+   citizen: true
+   score: 7331
+   funds: 20003
+ - id: 18
+   gender: male
+   age: 28
+   citizen: true
    score: 7330
-   funds: 20000
+   funds: 20004

@@ -38,6 +38,18 @@ public class Tiebreaker<E> {
 		return this;
 	}
 
+	public Tiebreaker<E> earliest(Function<E, Object> mapper) {
+		mappers.add(mapper);
+		comparators.add(multiTypeComparator.getPreferLowestBiFunction());
+		return this;
+	}
+
+	public Tiebreaker<E> latest(Function<E, Object> mapper) {
+		mappers.add(mapper);
+		comparators.add(multiTypeComparator.getPreferHighestBiFunction());
+		return this;
+	}
+
 	public Tiebreaker<E> prefer(Function<E, Boolean> mapper) {
 		mappers.add(mapper);
 		comparators.add((a, b) -> (Boolean) a ? -1 : +1);
@@ -78,7 +90,7 @@ public class Tiebreaker<E> {
 						Object avi = a.getValue(i);
 						Object bvi = b.getValue(i);
 						if (!avi.equals(bvi))
-							return this.comparators.get(i).apply(avi, bvi) == -1 ? a : b;
+							return this.comparators.get(i).apply(avi, bvi) < 0 ? a : b;
 					}
 					return a;
 				}) //

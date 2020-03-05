@@ -34,8 +34,6 @@ public class SimpleTests {
 
         assertEquals(pick.getId(), 6);
         assertEquals(control, list);
-
-        
     }
 
     @Test
@@ -91,8 +89,8 @@ public class SimpleTests {
         assertEquals(controlInput, referenceInput);
     }
 
-    private List<Person> read(String string) throws IOException {
+    private List<Person> read(String name) throws IOException {
         return new ObjectMapper(new YAMLFactory())
-                .readValue(getClass().getClassLoader().getResourceAsStream("input.yml"), PersonList.class).getList();
+                .readValue(getClass().getClassLoader().getResourceAsStream(name), PersonList.class).getList();
     }
 }
