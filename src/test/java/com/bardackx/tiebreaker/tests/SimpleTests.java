@@ -36,6 +36,27 @@ public class SimpleTests {
         assertEquals(control, list);
     }
 
+    @Test 
+    public void testSortUsingStrings() throws IOException {
+      List<Person> list = read("small.yml");
+      Person asc = new Tiebreaker<Person>()
+        .ascending(e -> e.getName())
+        .pick(list);
+      assertEquals(asc.getName(), "xavier");
+
+      Person desc = new Tiebreaker<Person>()
+        .descending(e -> e.getName())
+        .pick(list);
+      assertEquals(desc.getName(), "zuko");
+
+      List<Person> sorted = new Tiebreaker<Person>()
+        .lowest(e -> e.getName())
+        .sort(list);
+      assertEquals(sorted.get(0).getName(), "xavier");
+      assertEquals(sorted.get(1).getName(), "yugi");
+      assertEquals(sorted.get(2).getName(), "zuko");
+    }
+
     @Test
     public void testSort() throws IOException {
 
